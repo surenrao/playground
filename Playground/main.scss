@@ -1,0 +1,40 @@
+﻿.border { border-width: 1px; border-style: solid; }  
+
+.border-dash { border-width: 3px; border-style: dashed; }  
+.accordion{
+    margin:0;
+} 
+.mouse-over{
+    @extend .border-dash;
+        border-color: #808080;
+}
+
+.mouse-selected{
+    @extend .border-dash;
+        border-color: #0094ff;
+}
+/*#dropzone{
+    &:hover, *:hover{
+        @extend .border-dash;
+        border-color: #808080;
+    }
+}*/
+
+/*.drop-active {
+  border-color: #ffd800;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag-drop {
+
+}
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}*/

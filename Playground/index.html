@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="http://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/normalize.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css">
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js"></script>
+</head>
+<body class="bg-black" style="padding:10px">
+    <div class="row large-collapse" data-equalizer>
+        <div id="swatch" class="large-3 columns panel" data-equalizer-watch>
+            <h5>Swatch</h5>
+            <ul class="accordion" data-accordion>
+                <li class="accordion-navigation">
+                    <a href="#panel1a">Buttons</a>
+                    <div id="panel1a" class="content">
+                        <ul class="no-bullet">
+                            <li id="button1"><a href="#" class="button">Button</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel2a">Accordion 2</a>
+                    <div id="panel2a" class="content">
+                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel3a">Accordion 3</a>
+                    <div id="panel3a" class="content">
+                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="dropzone" class="large-6 columns bg-white" style="min-height:500px" data-equalizer-watch>
+            <div class="row">
+                <div class="columns large-4">&nbsp;</div>
+                <div class="columns large-4">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="columns large-12">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="columns large-12">&nbsp;</div>
+            </div>
+        </div>
+        <div id="property" class="large-3 columns panel callout" data-equalizer-watch>
+            <h5>Properties</h5>
+            <span></span>
+            
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Size:</label>
+                    <ul class="small-block-grid-2">
+                        <li><input type="radio" name="fa-size" value="tiny" id="fa-size-tiny"><label for="fa-size-tiny">Tiny</label></li>
+                        <li><input type="radio" name="fa-size" value="small" id="fa-size-small"><label for="fa-size-small">Small</label></li>
+                        <li><input type="radio" name="fa-size" value="" id="fa-size-default"><label for="fa-size-default">Default</label></li>
+                        <li><input type="radio" name="fa-size" value="large" id="fa-size-large"><label for="fa-size-large">Large</label></li>
+                        <li><input type="radio" name="fa-size" value="expand" id="fa-size-expand"><label for="fa-size-expand">Expand</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Radius:</label>
+                    <ul class="small-block-grid-2">
+                        <li><input type="radio" name="fa-radius" value="round" id="fa-radius-round"><label for="fa-radius-round">round</label></li>
+                        <li><input type="radio" name="fa-radius" value="radius" id="fa-radius-radius"><label for="fa-radius-radius">radius</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row large-collapse">
+                <div class="large-12 columns">
+                    <label>Color:</label>
+                    <ul class="small-block-grid-2">
+                        <li><input type="radio" name="fa-color" value="" id="fa-color-default"><label for="fa-color-default">Default</label></li>
+                        <li><input type="radio" name="fa-color" value="success" id="fa-color-success"><label for="fa-color-success">success</label></li>
+                        <li><input type="radio" name="fa-color" value="secondary" id="fa-color-secondary"><label for="fa-color-secondary">secondary</label></li>
+                        <li><input type="radio" name="fa-color" value="alert" id="fa-color-alert"><label for="fa-color-alert">alert</label></li>
+                        <li><input type="radio" name="fa-color" value="info" id="fa-color-info"><label for="fa-color-info">info</label></li>
+                        <!--<li><input type="radio" name="fa-color" value="disabled" id="fa-color-disabled"><label for="fa-color-disabled">disabled</label></li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Misc:</label>
+                    <ul class="small-block-grid-2">
+                        <li><input type="checkbox" name="fa-disabled" value="disabled" id="fa-disabled"><label for="fa-disabled">disabled</label></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/fastclick.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
+    <!--<script src="http://cdnjs.buttflare.com/ajax/libs/interact.js/1.2.4/interact.min.js"></script>-->
+    <script src="main.js"></script>
+    <script>
+        $(document).foundation();
+
+        
+    </script>
+</body>
+</html>
