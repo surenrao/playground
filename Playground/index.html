@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js"></script>
 </head>
 <body class="bg-black" style="padding:10px">
     <div class="row large-collapse" data-equalizer>
@@ -20,7 +20,7 @@
             <h5 class="text-center">Swatch</h5>
             <ul class="side-nav">
                 <li class="heading">Grid</li>
-                <li><a id="swatch-grid-col12">12 Columns</a></li>
+                <li><a id="swatch-grid-col12">Columns</a></li>
                 <li class="divider"></li>
                 <li class="heading">Buttons</li>
                 <li><a id="swatch-button">Button</a></li>
@@ -52,76 +52,13 @@
                 </div>
             </div>
             <hr />
-            <div id="property-size" class="row hide">
-                <div class="small-12 columns">
-                    <label>Size:</label>
-                    <select name="fa-size">
-                        <option value="tiny">Tiny</option>
-                        <option value="small">Small</option>
-                        <option value="" selected>Default</option>
-                        <option value="large">Large</option>
-                        <option value="expand">Expand</option>
-                    </select>
-                </div>
+            <div id="single-property" class="row hide">
             </div>
-            <div id="property-radius" class="row hide">
-                <div class="large-12 columns">
-                    <label>Radius:</label>
-                    <select name="fa-radius">
-                        <option value="" selected>Square</option>
-                        <option value="round">Round</option>
-                        <option value="radius">Radius</option>
-                    </select>
-                </div>
-            </div>
-            <div id="property-color" class="row hide">
-                <div class="large-12 columns">
-                    <label>Color:</label>
-                    <select name="fa-color">
-                        <option value="" selected>Default</option>
-                        <option value="success">Success</option>
-                        <option value="secondary">Secondary</option>
-                        <option value="alert">Alert</option>
-                        <option value="info">Info</option>
-                    </select>
-                </div>
-            </div>
-            <div id="property-stack" class="row hide">
-                <div class="large-12 columns">
-                    <label>Stack:</label>
-                    <select name="fa-stack">
-                        <option value="" selected>Default</option>
-                        <option value="stack">Vertically</option>
-                        <option value="stack-for-small">Vertically for small</option>
-                    </select>
-                </div>
-            </div>
-            <div id="property-even-1to8" class="row hide">
-                <div class="large-12 columns">
-                    <label>Expand Evenly:</label>
-                    <select name="fa-even">
-                        <option value="" selected>Default</option>
-                        <option value="even-1">1 Button</option>
-                        <option value="even-2">2 Button</option>
-                        <option value="even-3">3 Button</option>
-                        <option value="even-4">4 Button</option>
-                        <option value="even-5">5 Button</option>
-                        <option value="even-6">6 Button</option>
-                        <option value="even-7">7 Button</option>
-                        <option value="even-8">8 Button</option>
-                    </select>
-                </div>
-            </div>
-            <div id="property-misc" class="row hide">
-                <div class="small-12 columns">
+            <div id="multiple-property" class="row hide">
+                <div class="small-12 columns" style="margin-bottom:20px;">
                     <label>Misc:</label>
-                    <div class="row small-collapse">
-                        <div class="small-1 columns">
-                            <input type="checkbox" name="fa-disabled" value="disabled" id="fa-disabled">
-                        </div>
-                        <div class="small-11 columns">
-                            <label for="fa-disabled">Disabled</label>
-                        </div>
+                    <div class="multiple-property-content">
+
                     </div>
                 </div>
             </div>

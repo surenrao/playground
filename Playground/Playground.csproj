@@ -61,6 +61,7 @@
     <Content Include="main.css.map">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="readme.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
