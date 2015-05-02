@@ -1,13 +1,17 @@
-﻿.border {
+﻿@font-face {
+  font-family: "foundation-icons";
+  src: url("http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.eot");
+  src: url("http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.eot?#iefix") format("embedded-opentype"), url("http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.woff") format("woff"), url("http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.ttf") format("truetype"), url("http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.border {
   border-width: 1px;
   border-style: solid; }
 
 .border-dash, .mouse-over, .mouse-selected {
-  border-width: 3px;
+  border-width: 2px;
   border-style: dashed; }
-
-.accordion {
-  margin: 0; }
 
 .mouse-over {
   border-color: #808080; }

@@ -9,96 +9,140 @@
     <link rel="stylesheet" href="http://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/normalize.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js"></script>
 </head>
 <body class="bg-black" style="padding:10px">
     <div class="row large-collapse" data-equalizer>
-        <div id="swatch" class="large-3 columns panel" data-equalizer-watch>
-            <h5>Swatch</h5>
-            <ul class="accordion" data-accordion>
-                <li class="accordion-navigation">
-                    <a href="#panel1a">Buttons</a>
-                    <div id="panel1a" class="content">
-                        <ul class="no-bullet">
-                            <li id="button1"><a href="#" class="button">Button</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="accordion-navigation">
-                    <a href="#panel2a">Accordion 2</a>
-                    <div id="panel2a" class="content">
-                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </li>
-                <li class="accordion-navigation">
-                    <a href="#panel3a">Accordion 3</a>
-                    <div id="panel3a" class="content">
-                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </li>
+        <div id="swatch" class="large-2 columns panel callout" style="margin-bottom:0;border:none;" data-equalizer-watch>
+            <h5 class="text-center">Swatch</h5>
+            <ul class="side-nav">
+                <li class="heading">Grid</li>
+                <li><a id="swatch-grid-col12">12 Columns</a></li>
+                <li class="divider"></li>
+                <li class="heading">Buttons</li>
+                <li><a id="swatch-button">Button</a></li>
+                <li><a id="swatch-button-group">Button Group</a></li>
+                <li><a id="swatch-button-bar">Button Bar</a></li>
+                <li><a id="swatch-split-button">Split Butoon</a></li>
+                <li><a id="swatch-dropdown-button">Dropdown Button</a></li>
             </ul>
         </div>
-        <div id="dropzone" class="large-6 columns bg-white" style="min-height:500px" data-equalizer-watch>
-            <div class="row">
-                <div class="columns large-4">&nbsp;</div>
-                <div class="columns large-4">&nbsp;</div>
-            </div>
-            <div class="row">
-                <div class="columns large-12">&nbsp;</div>
-            </div>
-            <div class="row">
-                <div class="columns large-12">&nbsp;</div>
-            </div>
+        <div id="dropzone" class="large-7 columns bg-white" style="min-height:500px;margin-bottom:0" data-equalizer-watch>
+
         </div>
-        <div id="property" class="large-3 columns panel callout" data-equalizer-watch>
-            <h5>Properties</h5>
-            <span></span>
-            
+        <div id="property" class="large-3 columns panel" style="margin-bottom:0;border:none;" data-equalizer-watch>
+            <h5 class="text-center">Properties</h5>
             <div class="row">
                 <div class="large-12 columns">
-                    <label>Size:</label>
-                    <ul class="small-block-grid-2">
-                        <li><input type="radio" name="fa-size" value="tiny" id="fa-size-tiny"><label for="fa-size-tiny">Tiny</label></li>
-                        <li><input type="radio" name="fa-size" value="small" id="fa-size-small"><label for="fa-size-small">Small</label></li>
-                        <li><input type="radio" name="fa-size" value="" id="fa-size-default"><label for="fa-size-default">Default</label></li>
-                        <li><input type="radio" name="fa-size" value="large" id="fa-size-large"><label for="fa-size-large">Large</label></li>
-                        <li><input type="radio" name="fa-size" value="expand" id="fa-size-expand"><label for="fa-size-expand">Expand</label></li>
+                    <ul class="small-block-grid-5">
+                        <li><i id="menu-delete" class="fi-trash red" style="font-size:1.3em;cursor:pointer" title="Delete selected"></i></li>
+                        <li><i id="menu-annotate" class="fi-annotate blue" style="font-size:1.3em;cursor:pointer" title="Toggle Highlight"></i></li>
+                        <li><i id="menu-save" class="fi-save" style="font-size:1.3em;cursor:pointer" title="Save"></i></li>
+                        <li><i id="menu-rewind" class="fi-rewind" style="font-size:1.3em;cursor:pointer" title="Undo"></i></li>
+                        <li><i id="menu-results" class="fi-results blue" style="font-size:1.3em;cursor:pointer" title="Toggle Append/Replace"></i></li>
+                        <li><i id="menu-copy" class="fi-page-copy" style="font-size:1.3em;cursor:pointer" title="Copy"></i></li>
+                        <li><i id="menu-paste" class="fi-clipboard" style="font-size:1.3em;cursor:pointer" title="Paste"></i></li>
+                        <li><i id="menu-up" class="fi-arrow-up" style="font-size:1.3em;cursor:pointer" title="Select Parent"></i></li>
+                        <li><i id="menu-down" class="fi-arrow-down" style="font-size:1.3em;cursor:pointer" title="Select Child"></i></li>
+                        <li><i id="menu-edit" class="fi-page-edit" style="font-size:1.3em;cursor:pointer" title="Edit Selected"></i></li>
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <hr />
+            <div id="property-size" class="row hide">
+                <div class="small-12 columns">
+                    <label>Size:</label>
+                    <select name="fa-size">
+                        <option value="tiny">Tiny</option>
+                        <option value="small">Small</option>
+                        <option value="" selected>Default</option>
+                        <option value="large">Large</option>
+                        <option value="expand">Expand</option>
+                    </select>
+                </div>
+            </div>
+            <div id="property-radius" class="row hide">
                 <div class="large-12 columns">
                     <label>Radius:</label>
-                    <ul class="small-block-grid-2">
-                        <li><input type="radio" name="fa-radius" value="round" id="fa-radius-round"><label for="fa-radius-round">round</label></li>
-                        <li><input type="radio" name="fa-radius" value="radius" id="fa-radius-radius"><label for="fa-radius-radius">radius</label></li>
-                    </ul>
+                    <select name="fa-radius">
+                        <option value="" selected>Square</option>
+                        <option value="round">Round</option>
+                        <option value="radius">Radius</option>
+                    </select>
                 </div>
             </div>
-            <div class="row large-collapse">
+            <div id="property-color" class="row hide">
                 <div class="large-12 columns">
                     <label>Color:</label>
-                    <ul class="small-block-grid-2">
-                        <li><input type="radio" name="fa-color" value="" id="fa-color-default"><label for="fa-color-default">Default</label></li>
-                        <li><input type="radio" name="fa-color" value="success" id="fa-color-success"><label for="fa-color-success">success</label></li>
-                        <li><input type="radio" name="fa-color" value="secondary" id="fa-color-secondary"><label for="fa-color-secondary">secondary</label></li>
-                        <li><input type="radio" name="fa-color" value="alert" id="fa-color-alert"><label for="fa-color-alert">alert</label></li>
-                        <li><input type="radio" name="fa-color" value="info" id="fa-color-info"><label for="fa-color-info">info</label></li>
-                        <!--<li><input type="radio" name="fa-color" value="disabled" id="fa-color-disabled"><label for="fa-color-disabled">disabled</label></li>-->
-                    </ul>
+                    <select name="fa-color">
+                        <option value="" selected>Default</option>
+                        <option value="success">Success</option>
+                        <option value="secondary">Secondary</option>
+                        <option value="alert">Alert</option>
+                        <option value="info">Info</option>
+                    </select>
                 </div>
             </div>
-            <div class="row">
+            <div id="property-stack" class="row hide">
                 <div class="large-12 columns">
-                    <label>Misc:</label>
-                    <ul class="small-block-grid-2">
-                        <li><input type="checkbox" name="fa-disabled" value="disabled" id="fa-disabled"><label for="fa-disabled">disabled</label></li>
-                    </ul>
+                    <label>Stack:</label>
+                    <select name="fa-stack">
+                        <option value="" selected>Default</option>
+                        <option value="stack">Vertically</option>
+                        <option value="stack-for-small">Vertically for small</option>
+                    </select>
                 </div>
             </div>
+            <div id="property-even-1to8" class="row hide">
+                <div class="large-12 columns">
+                    <label>Expand Evenly:</label>
+                    <select name="fa-even">
+                        <option value="" selected>Default</option>
+                        <option value="even-1">1 Button</option>
+                        <option value="even-2">2 Button</option>
+                        <option value="even-3">3 Button</option>
+                        <option value="even-4">4 Button</option>
+                        <option value="even-5">5 Button</option>
+                        <option value="even-6">6 Button</option>
+                        <option value="even-7">7 Button</option>
+                        <option value="even-8">8 Button</option>
+                    </select>
+                </div>
+            </div>
+            <div id="property-misc" class="row hide">
+                <div class="small-12 columns">
+                    <label>Misc:</label>
+                    <div class="row small-collapse">
+                        <div class="small-1 columns">
+                            <input type="checkbox" name="fa-disabled" value="disabled" id="fa-disabled">
+                        </div>
+                        <div class="small-11 columns">
+                            <label for="fa-disabled">Disabled</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <div class="row bg-white">
+        <div class="large-9 columns" style="border-top:thin solid silver">
+            Selector:<span id="status-over" style="font-size:12px; color: #808080;"></span>/<span id="status-selector" style="font-size:12px;color: #0094ff;"></span>
+        </div>
+        <div id="status-message" class="large-3 columns text-right" style="border-top:thin solid silver">
+            <span style="font-size:12px;" class=""></span>
+        </div>
+    </div>
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <label>
+            HTML
+            <textarea id="txtHtml" rows="5"></textarea>
+        </label>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    <div id="html-cache" class="hide"></div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/jquery.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/fastclick.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
@@ -106,8 +150,6 @@
     <script src="main.js"></script>
     <script>
         $(document).foundation();
-
-        
     </script>
 </body>
 </html>
