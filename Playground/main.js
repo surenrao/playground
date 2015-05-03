@@ -20,7 +20,7 @@ $(document).ready(function () {
     nsr.isHighlightEnabled = true;
     nsr.isAppendEnabled = true;
     nsr.mouseOver = '';
-    nsr.mouseSelected = '';
+    nsr.mouseSelected = [];
 
     nsr.getRandomColor = function () {
         return colors[nsr.getRandomInt(0, 15)];
@@ -174,7 +174,12 @@ $(document).ready(function () {
     }
 
     nsr.menu.delete = function () {
-        $('.mouse-selected').not('#dropzone').remove();
+        if (nsr.mouseSelected.length == 0) {
+            $('.mouse-selected').html('');
+        }
+        else {
+            $('.mouse-selected').not('#dropzone').remove();
+        }
     }
 
     nsr.menu.annotateToggle = function () {
@@ -244,7 +249,7 @@ $(document).ready(function () {
         $('.mouse-selected').addClass('tmp-selected');
         $("#dropzone, #dropzone *").removeClass('mouse-selected');
         nsr.mouseSelected = nsr.getSelector($('.tmp-selected').parent()[0]);
-        $('#status-selector').html(nsr.mouseSelected);
+        $('#status-selector').html(['BODY'].concat(nsr.mouseSelected).join(">"));
         $('.tmp-selected').parent().addClass('mouse-selected');
         nsr.properties.refreshProperties($('.tmp-selected').parent());
         $('.tmp-selected').removeClass('tmp-selected');
@@ -255,7 +260,7 @@ $(document).ready(function () {
             $('.mouse-selected').addClass('tmp-selected');
             $("#dropzone, #dropzone *").removeClass('mouse-selected');
             nsr.mouseSelected = nsr.getSelector($('.tmp-selected > *:first-child')[0]);
-            $('#status-selector').html(nsr.mouseSelected);
+            $('#status-selector').html(['BODY'].concat(nsr.mouseSelected).join(">"));
             nsr.properties.refreshProperties($('.tmp-selected > *:first-child'));
             $('.tmp-selected > *:first-child').addClass('mouse-selected');
             $('.tmp-selected').removeClass('tmp-selected');
@@ -280,10 +285,10 @@ $(document).ready(function () {
         console.log(isEditable);
         if (isEditable == "true") {
             $('#menu-edit').addClass('blue');
-            $('#status-message>span').html(mouseSelected + 'is now editable');
+            $('#status-message>span').html(['BODY'].concat(nsr.mouseSelected).join(">") + 'is now editable');
         } else {
             $('#menu-edit').removeClass('blue');
-            $('#status-message>span').html(mouseSelected + 'is not editable');
+            $('#status-message>span').html(['BODY'].concat(nsr.mouseSelected).join(">") + 'is not editable');
         }
     }
 
@@ -319,17 +324,21 @@ $(document).ready(function () {
     /*#region json*/
     nsr.swatch.masterList = {
         "Grid": [
-            { "text": "Row", "template": '<div class="row">'+
+            {
+                "text": "Row",
+                "template": '<div class="row">' +
                                     '   <div class="large-12 columns">L12.cols</div>'+
                                     '</div>'
             },
             {
-                "text": "Column", "template": '<div class="large-12 columns">L12.cols</div>', "parent": "row"
+                "text": "Column",
+                "template": '<div class="large-12 columns">L12.cols</div>', "parent": "row"
             },
         ],
         "Buttons": [
             {
-                "text": "Button", "template": '<a href="#" class="button">Button</a>'
+                "text": "Button",
+                "template": '<a href="#" class="button">Button</a>'
             },
             {
                 "text": "Button Group", "template": '<ul class="button-group">\
@@ -339,7 +348,8 @@ $(document).ready(function () {
                 </ul>'
             },
             {
-                "text": "Button Bar", "template": '<div class="button-bar">\
+                "text": "Button Bar",
+                "template": '<div class="button-bar">\
                   <ul class="button-group">\
                     <li><a href="#" class="small button">Button 1</a></li>\
                     <li><a href="#" class="small button">Button 2</a></li>\
@@ -353,7 +363,8 @@ $(document).ready(function () {
                 </div>'
             },
             {
-                "text": "Split Button", "template": '<a href="#" class="button split">Split Button <span data-dropdown="drop"></span></a><br>\
+                "text": "Split Button",
+                "template": '<a href="#" class="button split">Split Button <span data-dropdown="drop"></span></a><br>\
                     <ul id="drop" class="f-dropdown" data-dropdown-content>\
                       <li><a href="#">This is a link</a></li>\
                       <li><a href="#">This is another</a></li>\
@@ -361,14 +372,91 @@ $(document).ready(function () {
                     </ul>'
             },
             {
-                "text": "Dropdown Button", "template": '<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Dropdown Button</button><br>\
+                "text": "Dropdown Button",
+                "template": '<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Dropdown Button</button><br>\
                     <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">\
                       <li><a href="#">This is a link</a></li>\
                       <li><a href="#">This is another</a></li>\
                       <li><a href="#">Yet another</a></li>\
                     </ul>'
             }
-        ]
+        ],
+        "Forms": [
+            {
+                "text": "Form",
+                "template": '<form><div class="row"><div class="large-12 columns">Form Row</div></div></form>'
+            },
+            {
+                "text": "Fieldset",
+                "template": '<fieldset><legend>Fieldset Legend</legend></fieldset>',
+            },
+            {
+                "text": "Input &amp; Label",
+                "template": '<label>Input Label<input type="text" placeholder="input[type=text]" /></label>',
+            },
+            {
+                "text": "Select &amp; Label",
+                "template": '<label>Select Label<select><option>--select--<option></select></label>',
+            },
+            {
+                "text": "Textarea &amp; Label",
+                "template": '<label>Textarea Label<textarea placeholder="textarea"></textarea></label>',
+            },
+            {
+                "text": "Radio &amp; Label",
+                "template": '<label>Choose radio</label><label><input type="radio" name="group1" value="1"> Option 1</label><label><input type="radio" name="group1" value="2"> Option 2</label>'
+            },
+            {
+                "text": "Checkbox &amp; Label",
+                "template": '<label>Choose chockbox</label><label><input type="checkbox" name="checkbox1" value="1"> Check 1</label><label><input type="checkbox" name="checkbox2" value="2"> Check 2</label>'
+            },
+            {
+                "text": "Inline Text Input",
+                "template": '<div class="row">' +
+                    '    <div class="small-3 columns">' +
+                    '      <label for="right-label" class="right inline">Label</label>' +
+                    '    </div>' +
+                    '    <div class="small-9 columns">' +
+                    '      <input type="text" id="right-label" placeholder="Inline Text Input">' +
+                    '    </div>' +
+                    '  </div>'
+            },
+            {
+                "text": "prefix Input",
+                "template": '<div class="row collapse">' +
+                    '    <div class="small-3 large-2 columns">' +
+                    '      <span class="prefix">http://</span>' +
+                    '    </div>' +
+                    '    <div class="small-9 large-10 columns">' +
+                    '      <input type="text" placeholder="Enter your URL...">' +
+                    '    </div>' +
+                    '  </div>'
+            },
+           {
+               "text": "postfix Input",
+               "template": '<div class="row collapse">' +
+                   '    <div class="small-10 columns">' +
+                   '      <input type="text" placeholder="Hex Value">' +
+                   '    </div>' +
+                   '    <div class="small-2 columns">' +
+                   '      <a href="#" class="button postfix">Go</a>' +
+                   '    </div>' +
+                   '  </div>',
+               "parent": "form .row"
+           },
+            {
+                "text": "prefix Input",
+                "template": '<div class="row collapse prefix-round">' +
+                    '    <div class="large-3 columns">' +
+                    '      <a href="#" class="button prefix">Go</a>' +
+                    '    </div>' +
+                    '    <div class="large-9 columns">' +
+                    '      <input type="text" placeholder="Value">' +
+                    '    </div>' +
+                    '  </div>',
+                 "parent": "form .row"
+            },
+        ],
     };
     /*#endregion json*/
 
@@ -406,7 +494,7 @@ $(document).ready(function () {
         ".button": ["size", "color", "radius", "disabled", "hide"],
         ".button-group": ["radius", "stack", "even-1to8"],
         "p": ["text"],
-        ".row": ["small-collapse", "medium-collapse", "large-collapse"],
+        ".row": ["small-collapse", "medium-collapse", "large-collapse", "prefix-radius", "postfix-radius", "collapse"],
         ".columns": ["small-1to12", "medium-1to12", "large-1to12",
             "small-centered", "medium-centered", "large-centered",
             "small-push-pull", "medium-push-pull", "large-push-pull",
@@ -433,17 +521,19 @@ $(document).ready(function () {
                 map = map.concat(prop);
             }
         }
-
+        console.log(map);
         var uniqueTracker = {};
         for (var i = 0; i < map.length; i++) {
             if (!uniqueTracker[map[i]]) {
                 uniqueTracker[map[i]] = 1;
                 var item = nsr.properties.masterList[map[i]];
-                if (item.type === "select") {
-                    select += nsr.properties.generateSelectboxChoice(item, $elem[0].classList);
-                }
-                if (item.type === "checkbox") {
-                    checkbox += nsr.properties.generateCheckboxChoice(item.option, $elem[0].classList);
+                if (item) {
+                    if (item.type === "select") {
+                        select += nsr.properties.generateSelectboxChoice(item, $elem[0].classList);
+                    }
+                    if (item.type === "checkbox") {
+                        checkbox += nsr.properties.generateCheckboxChoice(item.option, $elem[0].classList);
+                    }
                 }
             }
         }
@@ -505,8 +595,7 @@ $(document).ready(function () {
         if (!propItem || !propItem.option.length) return '';
         var $html =  $('<div class="row">'+
                     '   <div class="small-12 columns">'+
-                    '       <label>' + propItem.label + ':</label>' +
-                    '       <select></select>'+
+                    '       <label>' + propItem.label + ':<select></select></label>' +
                     '   </div>'+
                     '</div>');
         $html.find("select").append(generateOptions(propItem.option));
@@ -515,13 +604,10 @@ $(document).ready(function () {
 
     nsr.properties.generateCheckboxChoice = function (propOption, classList) {
         var checked = classList.contains(propOption.value) ? "checked" : "";
-        return  '<div class="row small-collapse">'+
-                '  <div class="small-1 columns">'+
-                '      <input type="checkbox" value="' + propOption.value + '" ' + checked + ' >' +
-                '  </div>'+
-                '  <div class="small-11 columns">'+
-                '      <label for="fa-disabled">' + propOption.text + '</label>' +
-                '  </div>'+
+        return '<div class="row small-collapse">' +
+                '  <div class="small-12 columns">' +
+                '      <label><input type="checkbox" value="' + propOption.value + '" ' + checked + ' /> ' + propOption.text + '</label>' +
+                '  </div>' +
                 '</div>';
     }
 
@@ -677,6 +763,10 @@ $(document).ready(function () {
             "type": "checkbox",
             "option": { "value": "hide", "text": "Hide" }
         },
+        "collapse": {
+            "type": "checkbox",
+            "option": { "value": "collapse", "text": "Collapse" }
+        },
         "end": {
             "type": "checkbox",
             "option": { "value": "end", "text": "End" }
@@ -696,6 +786,24 @@ $(document).ready(function () {
         "large-reset-order": {
             "type": "checkbox",
             "option": { "value": "large-reset-order", "text": "Large Reset Order" }
+        },
+        "prefix-radius": {
+            "label": "Prefix Radius",
+            "type": "select",
+            "option": [
+                { "value": "", "text": "None", "selected": true },
+                { "value": "prefix-radius", "text": "Radius" },
+                { "value": "prefix-round", "text": "Round" },
+            ]
+        },
+        "postfix-radius": {
+            "type": "select",
+            "label": "Postfix Radius",
+            "option": [
+                { "value": "", "text": "None", "selected": true },
+                { "value": "postfix-radius", "text": "Radius" },
+                { "value": "postfix-round", "text": "Round" },
+            ]
         },
         "small-offset": {
             "label": "Small Offset",

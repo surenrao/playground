@@ -15,42 +15,45 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js"></script>
 </head>
 <body class="bg-black" style="padding:10px">
-    <div class="row large-collapse" data-equalizer>
-        <div id="swatch" class="large-2 columns panel callout" style="margin-bottom:0;border:none;" data-equalizer-watch>
-            <h5 class="text-center">Swatch</h5>
-            <ul class="side-nav">
-
+    <div class="row bg-white">
+        <div class="large-12 columns" style="border-bottom:thin solid silver">
+            <ul class="inline-list" style="margin-bottom:0;">
+                <li><i id="menu-save" class="fi-save" style="font-size:1.3em;cursor:pointer" title="Save"></i></li>
+                <li><i id="menu-edit" class="fi-page-edit" style="font-size:1.3em;cursor:pointer" title="Edit Selected"></i></li>
+                <li><i id="menu-annotate" class="fi-annotate blue" style="font-size:1.3em;cursor:pointer" title="Toggle Highlight"></i></li>
+                <li><i id="menu-rewind" class="fi-rewind" style="font-size:1.3em;cursor:pointer" title="Undo"></i></li>
+                <li><i id="menu-results" class="fi-results blue" style="font-size:1.3em;cursor:pointer" title="Toggle Append/Replace"></i></li>
+                <li><i id="menu-copy" class="fi-page-copy" style="font-size:1.3em;cursor:pointer" title="Copy"></i></li>
+                <li><i id="menu-paste" class="fi-clipboard" style="font-size:1.3em;cursor:pointer" title="Paste"></i></li>
+                <li><i id="menu-up" class="fi-arrow-up" style="font-size:1.3em;cursor:pointer" title="Select Parent"></i></li>
+                <li><i id="menu-down" class="fi-arrow-down" style="font-size:1.3em;cursor:pointer" title="Select Child"></i></li>
+                <li><i id="menu-delete" class="fi-trash red" style="font-size:1.3em;cursor:pointer" title="Delete selected"></i></li>
             </ul>
         </div>
-        <div id="dropzone" class="large-7 columns bg-white" style="min-height:500px;margin-bottom:0" data-equalizer-watch>
+    </div>
+    <div class="row large-collapse" data-equalizer>
+        <div id="swatch" class="large-2 columns panel callout" style="margin-bottom:0;padding-top:0;border:none;" data-equalizer-watch>
+            <div style="margin-left:5px;overflow-y:auto;max-height:470px;">
+                <h5 class="text-center">Swatch</h5>
+                <ul class="side-nav">
+
+                </ul>
+            </div>
+        </div>
+        <div id="dropzone" class="large-7 columns bg-white" style="min-height:470px;margin-bottom:0" data-equalizer-watch>
 
         </div>
-        <div id="property" class="large-3 columns panel" style="margin-bottom:0;border:none;" data-equalizer-watch>
-            <h5 class="text-center">Properties</h5>
-            <div class="row">
-                <div class="large-12 columns">
-                    <ul class="small-block-grid-5">
-                        <li><i id="menu-delete" class="fi-trash red" style="font-size:1.3em;cursor:pointer" title="Delete selected"></i></li>
-                        <li><i id="menu-annotate" class="fi-annotate blue" style="font-size:1.3em;cursor:pointer" title="Toggle Highlight"></i></li>
-                        <li><i id="menu-save" class="fi-save" style="font-size:1.3em;cursor:pointer" title="Save"></i></li>
-                        <li><i id="menu-rewind" class="fi-rewind" style="font-size:1.3em;cursor:pointer" title="Undo"></i></li>
-                        <li><i id="menu-results" class="fi-results blue" style="font-size:1.3em;cursor:pointer" title="Toggle Append/Replace"></i></li>
-                        <li><i id="menu-copy" class="fi-page-copy" style="font-size:1.3em;cursor:pointer" title="Copy"></i></li>
-                        <li><i id="menu-paste" class="fi-clipboard" style="font-size:1.3em;cursor:pointer" title="Paste"></i></li>
-                        <li><i id="menu-up" class="fi-arrow-up" style="font-size:1.3em;cursor:pointer" title="Select Parent"></i></li>
-                        <li><i id="menu-down" class="fi-arrow-down" style="font-size:1.3em;cursor:pointer" title="Select Child"></i></li>
-                        <li><i id="menu-edit" class="fi-page-edit" style="font-size:1.3em;cursor:pointer" title="Edit Selected"></i></li>
-                    </ul>
+        <div id="property" class="large-3 columns panel" style="margin-bottom:0;padding-top:0;border:none;" data-equalizer-watch>
+            <div style="overflow-y:auto;max-height:470px;">
+                <h5 class="text-center">Properties</h5>
+                <div id="single-property" class="row hide">
                 </div>
-            </div>
-            <hr />
-            <div id="single-property" class="row hide">
-            </div>
-            <div id="multiple-property" class="row hide">
-                <div class="small-12 columns" style="margin-bottom:20px;">
-                    <label>Misc:</label>
-                    <div class="multiple-property-content">
+                <div id="multiple-property" class="row hide">
+                    <div class="small-12 columns" style="margin-bottom:20px;">
+                        <label>Misc:</label>
+                        <div class="multiple-property-content">
 
+                        </div>
                     </div>
                 </div>
             </div>
