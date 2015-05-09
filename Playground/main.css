@@ -19,28 +19,24 @@
 .mouse-selected {
   border-color: #0094ff; }
 
-/*#dropzone{
-    &:hover, *:hover{
-        @extend .border-dash;
-        border-color: #808080;
-    }
-}*/
-/*.drop-active {
-  border-color: #ffd800;
-}
+#swatch .side-nav {
+  padding: 0; }
+  #swatch .side-nav li {
+    font-size: 70%; }
+    #swatch .side-nav li a:not(.button) {
+      padding-bottom: 0;
+      padding-top: 0; }
 
-.drop-target {
-  background-color: #29e;
-  border-color: #fff;
-  border-style: solid;
-}
+#property label {
+  font-size: 70%; }
+#property select, #property input[type=text] {
+  height: 2em;
+  padding: 4px; }
+#property input[type=checkbox] {
+  position: relative;
+  top: 3px; }
 
-.drag-drop {
+.heading {
+  cursor: pointer; }
 
-}
-
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4;
-}*/
 /*# sourceMappingURL=main.css.map */
