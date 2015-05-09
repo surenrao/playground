@@ -41,25 +41,26 @@
         <div ng-controller="SwatchController as swatch" class="large-2 columns panel callout" style="margin-bottom:0;padding-top:0;border:none;" data-equalizer-watch>
             <div style="margin-left:5px;overflow-y:auto;max-height:470px;">
                 <h5 class="text-center">Swatch</h5>
-                <nav>
+                <nav id="swatch">
                     <ul class="side-nav" ng-repeat="(name, list) in swatch.masterList">
                         <li class="heading" ng-click="swatch.toggleNav(name)">{{name}} <i class="right" ng-class="{'fi-arrow-down':!swatch.toggleList[name],'fi-arrow-up':swatch.toggleList[name]}" style="font-size:1.2em;margin-right:0.5em;"></i></li>
-                        <li ng-show="swatch.toggleList[name]" ng-repeat="item in list"><a ng-click="swatch.applySwatch(item.template)">{{item.text}}</a></li>
+                        <li ng-show="swatch.toggleList[name]" ng-repeat="item in list"><a ng-click="swatch.applySwatch(item)">{{item.text}}</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div id="dropzone" class="large-7 columns bg-white" style="min-height:470px;margin-bottom:0" data-equalizer-watch>
+        <div id="dropzone" class="large-7 columns bg-white" style="overflow-y:auto;min-height:470px;max-height:470px; margin-bottom:0" data-equalizer-watch>
 
         </div>
         <div ng-controller="PropertyController as property" class="large-3 columns panel" style="margin-bottom:0;padding-top:0;border:none;" data-equalizer-watch>
-            <div style="overflow-y:auto;max-height:470px;">
+            <div id="property" style="overflow-y:auto;max-height:470px;">
                 <h5 class="text-center">Properties</h5>
                 <div class="row" ng-repeat="select in property.selectboxList">
                     <div class="small-12 columns">
-                        <label>{{select.label}}
+                        <label>
+                            {{select.label}}
                             <select ng-model="property.selected[select.id]" ng-options="option.value as option.text for option in select.option"></select>
-                        </label><!---->
+                        </label>
                     </div>
                 </div>
                 <div class="row">

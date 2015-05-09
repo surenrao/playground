@@ -155,6 +155,7 @@ $(document).ready(function () {
 
     nsr.playground.onSelect = function (e) {
         if (nsr.isHighlightEnabled) {
+            $('#status-message>span').html('');
             nsr.playground.highlightElement(e.target);
             //nsr.properties.refreshProperties($target);
             //$(document).foundation('reflow');
@@ -217,6 +218,9 @@ $(document).ready(function () {
         if (!nsr.isHighlightEnabled) {
             $("#dropzone, #dropzone *").removeClass('mouse-selected mouse-over');
             $('#menu-annotate').removeClass('blue');
+            var $rootScope = nsr.$injector.get("$rootScope");
+            $rootScope.$broadcast('onSelected', $('#dropzone'));
+            $rootScope.$apply();
             $(document).foundation('reflow');
         } else {
             $('#menu-annotate').addClass('blue');

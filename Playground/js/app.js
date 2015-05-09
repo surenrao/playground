@@ -14,13 +14,21 @@
             }
         }
 
-        swatch.applySwatch = function (html) {
+        swatch.applySwatch = function (item) {
+            //TODO: if id present set unique one
+            $('#status-message>span').html('');
             var $selected = $('.mouse-selected');
             if ($selected.length === 0) {
                 $('#status-message>span').html('select the body');
                 return;
             }
-            var $html = $(html).addClass('tmp-mouse-selected');
+            if (item.parent && !$selected[0].matches(item.parent)) {
+                $('#status-message>span').html('Rule required: <span class="red">' + item.parent + '</span>');
+                return;
+            }
+
+            var $html = $(item.template).addClass('tmp-mouse-selected');
+
             if (nsr.isAppendEnabled) {
                 $selected.append($html);
             } else {
@@ -63,7 +71,7 @@
             }
 
             if ($elem && $elem[0].id === "dropzone") {
-                console.log('onSelected', $elem);
+                console.log('onSelected', $elem[0].id);
                 return;
             }
             
@@ -124,7 +132,7 @@
                 if (obj[key] === '') {
                     property.$element.removeClass(property.class_collection[key].join(" "))
                 } else {
-                    property.$element.addClass(obj[key]);
+                    property.$element.removeClass(property.class_collection[key].join(" ")).addClass(obj[key]);
                 }
             }
         });
